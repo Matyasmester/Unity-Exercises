@@ -5,20 +5,20 @@ using UnityEngine.SceneManagement;
 
 public class spawnSphere : MonoBehaviour {
 
-    public Vector3 pos;
+    public GameObject sphere;
+    public Rigidbody rb;
 
 	// Use this for initialization
 	void Start () {
-
-	}
+        
+    }
 	
 	// Update is called once per frame
 	void FixedUpdate () {
         if (Input.GetKey("space"))
         {
             //Debug.Log("Az input mukszik.");
-            FindObjectOfType<MeshRenderer>().enabled = true;
-            FindObjectOfType<Transform>().position = pos;
+            Instantiate(sphere, new Vector3(0, 30, 0), Quaternion.identity);
             
         }
     }
